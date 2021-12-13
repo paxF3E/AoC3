@@ -99,3 +99,7 @@ FYI:
   - #requests = Π(#payloads in each payload set)
 
 ## Day 5 Web Exploitation :: XSS
+- cross-site scripting or XSS, is an injection attack, where a malicious JS script is injected to be executed with the source of the webapp. Once executed, numerous things can be targetted to exploit the victim.
+- <b>Injection Attack</b> is the exploitation of a computer bug that is caused by processing invalid data. The injection is used by an attacker to introduce code into a vulnerable computer program and change the course of execution.
+#### XSS Vulnerabilities
+1. DOM, document object model, is an interface for HTML
