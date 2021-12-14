@@ -24,7 +24,7 @@ HTTP is a stateless protocol. At every request, server cant distinguish btw user
 
 - Cookie components are key-value pairs. tbf, `name-value` others are `attribute-value`. <br>
 - `Set-Cookie` example ```Set-Cookie: <cookie-name>=<cookie-value>; Domain=<domain-value>; Secure; HttpOnly```
-#### Cookie Manipulation
+#### Cookie Manipulation Schematics
 1. fetch a cookie
 2. decode its value
 3. identify the scheme and abuse
@@ -103,3 +103,18 @@ FYI:
 - <b>Injection Attack</b> is the exploitation of a computer bug that is caused by processing invalid data. The injection is used by an attacker to introduce code into a vulnerable computer program and change the course of execution.
 #### XSS Vulnerabilities
 1. DOM, document object model, is an interface for HTML
+  - JS script is executed in the browser, without loading any new page
+  - executed when source JS is acted by user interaction
+  - example `JS code fetching some contents from any param, and writing on the page section being viewed. contents of the hash arnt checked, thus malicous code can be put anywhere in the source JS`
+2. Reflected
+  - when user's data is put in the src
+  - example `https://website.thm/login?error=Username%20Is%20Incorrect` script is executed when someone visits the page
+3. Stored
+  - when XSS script is stored on the webapp (say, db) 
+  - gets run on every visit on the page
+  - numerous victims, triggering the script without checking the XSS payload
+4. Blind
+  - similar to stored XSS
+  - cant test against yourself. put the payload. gets executed when viewed.
+
+## Day 5 Web Exploitation :: LFI
