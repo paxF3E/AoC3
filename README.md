@@ -118,3 +118,18 @@ FYI:
   - cant test against yourself. put the payload. gets executed when viewed.
 
 ## Day 5 Web Exploitation :: LFI
+- web app vulnerablity allowing an attack to exploit the files that are included on the server. could be including cryptographic keys, secured dbs, private data.
+- lack of input validation, unsanitized user inputs, grants them control over the vulnerability
+- Risks :
+  - exposed critical data
+  - LFI triggered RCE
+    - RCE, Remote Code Execution or ACE, `Arbitary Code Execution` is an attacker's ability to run any commands or code of the attacker's choice on a target machine or in a target process
+    - program designed to exploit such a vulnerability is called an `arbitrary code execution exploit`
+    - `exploit` is a software, data, or commands that take advantage of a bug/vulnerability to cause unanticipated behaviour like 
+      1. gaining control of the system
+      2. allowing priveledge escalation
+        - <b>Priveledge Escalation</b> is the act of exploiting a bug/design flaw/config oversight in an OS or app to gain elevated access to resources, protected from an application or user resulting in an application with more privileges than intended by the application developer or system administrator which can perform unauthorized actions
+      3. denial of service (DoS or DDoS attack)
+        - **DoS** is making a machine/network resource unavailable to the user by disrupting the services of the host
+        - accomplished by flooding the targeted machine/network with request and overload to prevent some/all legitimate requests from being fulfilled
+        - **DDoS** the incoming traffic flooding the victim is from various sources, making it impossible to prevent the attack by blocking a single source...wow
