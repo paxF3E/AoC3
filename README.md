@@ -133,3 +133,16 @@ FYI:
         - **DoS** is making a machine/network resource unavailable to the user by disrupting the services of the host
         - accomplished by flooding the targeted machine/network with request and overload to prevent some/all legitimate requests from being fulfilled
         - **DDoS** the incoming traffic flooding the victim is from various sources, making it impossible to prevent the attack by blocking a single source...wow
+<br>
+
+- possible entry points, `GET` or `POST` params -> test for vulnerabilities
+  - include OS files -> record reaction of the app
+  - techniques
+    1. direct file inclusion
+    2. use of `..` to move one level up
+    3. bypassing filters using `....//`
+    4. URL encoding (like double encoding)
+
+- PHP Wrappers
+
+- Log Poisoning
