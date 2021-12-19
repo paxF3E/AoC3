@@ -142,7 +142,69 @@ FYI:
     2. use of `..` to move one level up
     3. bypassing filters using `....//`
     4. URL encoding (like double encoding)
-
+- **HTTP Headers** are list of strings sent and received by both client and server on every HTTP request.
+  - invisible to end-user; processed and logged by server and client apps
+  - defines the encoding type; session verification and identification; how to handle data on server side, age of doc being accessed
+  - earlier format:
+    - `:` separated key-value pairs
+    - terminated by `CF` (carriage return, a control character or mechanism used to reset a device's position to the beginning of a line of text) and `LF` (line feed, EOL or SOL)
+   - modern format : binary protocol
+  
 - PHP Wrappers
+  - additional code guiding the stream how to handle protocols/encodings
+  - examples ![image](https://user-images.githubusercontent.com/75432450/146645982-d7848f5d-301c-4a5e-a78a-d3f5fe03437c.png)
 
+<br>
+
+- **PHP filter** wrapper allows to read actual PHP files content encoded in formats cz they are executed directly and are never show the existing code `?file=php://filter/convert.base64-encode/resource=$PATH <\n> ?file=php://filter/read=string.rot13/resource=$PATH`
+- **PHP data** wrapper includes the raw plain text or base64 encoded data `?file=data://text/plain;base64,ENCODED_TEXT`
+#### RCE via LFE
 - Log Poisoning
+  - technique to gain RCE on webserver
+  - malicious payload is included in the service log files
+  - LFI is used to request the page including malicious payload
+  - depends on
+    1. design of webapp and server configs
+    2. requires enumerations and analysis of schematics of the target webapp
+
+- `User-Agent` is an HTTP header containing user's browser info to allow servers to identify type of OS, vendor, and version that can be controlled by the user.
+  - In order to gain RCE, include PHP code in User-Agent; send request to log file to execute in the browser `curl -A $CODE_TEXT $URL`
+  - include the code into webapp log `curl -A "<?php phpinfo();?>" $URL`
+  - include the PHP code into the User-Agent and execute it using LFI vulnerability
+
+#### RCE via PHP Sessions
+- use session files instead of log files
+  - enumeration to read the PHP config files
+  - include PHP code in the session
+  - call the file via LFI
+- PHP uses a naming scheme `sess_<SESSION_ID>`; `SESSION_ID` can be retrieved from cookies/browser `https://$URL/$PAGE.php?err=$PATH/sess_<SESSION_ID>`
+
+## Day 6 Web Exploitation :: NoSQL Injection
+#### NoSQL 
+- non-relational-database or non-SQL or not-only-SQL
+- data storing/retrieving systems
+- used for big Data and IoT devices
+- fast queries, ease of use, scalability, flexible DS
+#### MongoDB
+- **Collection** <=> tables
+- **Documents** <=> rows
+- **Fields** <=> columns
+#### SQL Injection
+- db control with the attacker
+- by sending queries over untrusted and unfiltered webapp input
+- unauthorised leakage of info
+- modification, privilage escalation, DoS attack
+  - `> db.COLLECTION.findOne({username: $USERNAME, password: {"$ne":"xyz"}})` ; changed logic tricks the webapp to let us through
+- **Exploiting SQL Injection**
+  - find an entry point for unsanitized user input
+  - how requests are passed by webapp, JSON or GET/POST
+  - GET/POST
+    - inject an array to match the JSON objection to match Key:Value pair
+    - `http://URL/search?username=admin&role[$ne]=user`
+  - JSON 
+    - manipulate the JSON file by inserting MongoDB operators
+<br>
+
+- Inshort, trick the webapp logic
+
+## Day 7 Special :: Powershell Transcriptions Log
