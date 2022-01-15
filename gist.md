@@ -117,7 +117,7 @@ FYI:
   - similar to stored XSS
   - cant test against yourself. put the payload. gets executed when viewed.
 
-## Day 5 Web Exploitation :: LFI
+## Day 6 Web Exploitation :: LFI
 - web app vulnerablity allowing an attack to exploit the files that are included on the server. could be including cryptographic keys, secured dbs, private data.
 - lack of input validation, unsanitized user inputs, grants them control over the vulnerability
 - Risks :
@@ -179,7 +179,7 @@ FYI:
   - call the file via LFI
 - PHP uses a naming scheme `sess_<SESSION_ID>`; `SESSION_ID` can be retrieved from cookies/browser `https://$URL/$PAGE.php?err=$PATH/sess_<SESSION_ID>`
 
-## Day 6 Web Exploitation :: NoSQL Injection
+## Day 7 Web Exploitation :: NoSQL Injection
 #### NoSQL 
 - non-relational-database or non-SQL or not-only-SQL
 - data storing/retrieving systems
@@ -207,9 +207,11 @@ FYI:
 
 - Inshort, trick the webapp logic
 
-## Day 7 Special :: Powershell Transcriptions Log
+## Day 8 Special :: Powershell Transcriptions Log
 - captures the input and output of powershell commands
 - Windows Registry
   - large database of OS settings and config.
   - organized by hives
     - logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in
+
+## Day 9 Networking :: Packet Analysis
