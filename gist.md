@@ -208,3 +208,8 @@ FYI:
 - Inshort, trick the webapp logic
 
 ## Day 7 Special :: Powershell Transcriptions Log
+- captures the input and output of powershell commands
+- Windows Registry
+  - large database of OS settings and config.
+  - organized by hives
+    - logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in
