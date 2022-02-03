@@ -215,3 +215,15 @@ FYI:
     - logical group of keys, subkeys, and values in the registry that has a set of supporting files loaded into memory when the operating system is started or a user logs in
 
 ## Day 9 Networking :: Packet Analysis
+- Packet analysis is a technique used to capture and intercept network traffic that passes the computer’s network interfaces
+  - network troubleshooting and communication protocol analysis
+  - `Wireshark` captures network packets in real-time and displays them in a human-readable format
+
+- The TCP/IP Stack, or the internet protocol suite, is a set of communication protocols used by the Internet or similar networks
+  - https://www.linkedin.com/pulse/what-tcpip-stack-phillip-zito/
+- OSI stands for Open System Interconnection is a reference model that describes how information from a software application in one computer moves through a physical medium to the software application in another computer
+- a handshake is a signal between two devices or programs, used to, e.g., authenticate, coordinate; for example the handshaking between a hypervisor and an application in a guest virtual machine
+
+- Berkeley Packet Filter (BPF) syntax is used in packet analyzers to filter specific packets pre-capture
+  - Filtering packets is beneficial when locating information within a packet capture process
+- DNS is like a giant phone book that takes a URL and turns it into an IP address
