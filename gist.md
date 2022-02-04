@@ -227,3 +227,32 @@ FYI:
 - Berkeley Packet Filter (BPF) syntax is used in packet analyzers to filter specific packets pre-capture
   - Filtering packets is beneficial when locating information within a packet capture process
 - DNS is like a giant phone book that takes a URL and turns it into an IP address
+
+## Day 10 Networking :: Security Assessment
+### IP Addresses
+  - Every computer (host) that connects to a network needs to have a logical address
+  - this address is logical because it's assigned by software and could change over time
+  - Internet Protocol version 4 (IPv4)
+    - made up of 4 decimal numbers (0-255)
+      - `192.168.0.10`; `172.16.0.100`; `10.10.11.12`; `1.1.1.1`; first 3 are private(can be accessed from private networks only) and last one is a public IP
+      - `127.0.0.1` is often referred to as the 'loopback address' or 'localhost', by default, any packet or traffic destined to this address won't leave the host
+### Web Server
+  - program that listens for incoming connections, usually from web browsers, and responds to their requests
+  - server usually refers to a computer system that provides services to other clients, i.e. other computers, over a network. Ex: serving webpages, delivering email, facilitating video conferencing
+  - TCP/IP protocols:
+    - Hypertext Transfer Protocol (HTTP) for serving webpages
+    - Domain Name System (DNS) for resolving hostnames to IP addresses
+    - Post Office Protocol version 3 (POP3) for delivering email
+    - Simple Mail Transfer Protocol (SMTP) for sending email
+    - Telnet for remote login
+    - Secure Shell (SSH) for secure remote login
+### Ports
+  - On a host, multiple processess can access the network simultaneously. To deliver packets correctly, port numbers are required to recognize the process
+    ![image](https://user-images.githubusercontent.com/75432450/152498401-87b5be8a-fc67-45c9-b3bc-ed8849a01e07.png)
+  - TCP and UDP protocols live on top of the IP protocol and connect processes running on different hosts
+  - TCP requires a three-way handshake for a connection to be established, while UDP does not
+### Nmap
+  - Nmap is a network scanning tool that uses IP packets to identify all the devices connected to a network and to provide information on the services and operating systems they are running
+  - `nmap -sT/sS MACHINE_IP`checks 1000 most common TCP ports
+  - TCP Connect Scan: completes the three-way handshake in order to establish a connection with each port scanned (knocks the door and answers on answered)
+  - TCP SYN Scan: does not complete a TCP three-way handshake (knocks the door and pretends not to when answered)
