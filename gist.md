@@ -254,5 +254,5 @@ FYI:
 ### Nmap
   - Nmap is a network scanning tool that uses IP packets to identify all the devices connected to a network and to provide information on the services and operating systems they are running
   - `nmap -sT/sS MACHINE_IP`checks 1000 most common TCP ports
-  - TCP Connect Scan: completes the three-way handshake in order to establish a connection with each port scanned (knocks the door and answers on answered)
-  - TCP SYN Scan: does not complete a TCP three-way handshake (knocks the door and pretends not to when answered)
+    - TCP Connect Scan: completes the three-way handshake in order to establish a connection with each port scanned (knocks the door and answers on answered)
+    - TCP SYN Scan: does not complete a TCP three-way handshake (knocks the door and pretends not to when answered)
