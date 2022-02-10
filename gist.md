@@ -256,3 +256,15 @@ FYI:
   - `nmap -sT/sS MACHINE_IP`checks 1000 most common TCP ports
     - TCP Connect Scan: completes the three-way handshake in order to establish a connection with each port scanned (knocks the door and answers on answered)
     - TCP SYN Scan: does not complete a TCP three-way handshake (knocks the door and pretends not to when answered)
+
+## Day 11 Networking :: MS SQL ans `sqsh`
+  -  basic `sqsh` use and accessing the active MS SQL server
+  -  `xp_cmdshell` commands to access the windows and look for the flag in dir
+
+## Day 12 Networking :: Server scans
+  - `nmap` to scan the server
+  - Network File System (NFS) is a protocol that allows the ability to transfer files between different computers
+  - `mount` command
+
+## Day 13 Networking :: Priviledges
+  - 
