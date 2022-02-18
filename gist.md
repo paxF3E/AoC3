@@ -267,4 +267,51 @@ FYI:
   - `mount` command
 
 ## Day 13 Networking :: Priviledges
-  - 
+  - Account Types in Windows Server
+    - Domain Administrator : highest account level
+      - `domain` is a central registry used to manage all users
+    - Services : accounts used by software to perform tasks such as back-ups or antivirus scans
+    - Domain users : accounts with enuf priviledges to do daily jobs
+    - Local accounts : accounts valid on the local system and not over the domain
+    - -> Account management is done using groups
+
+  ### Priviledge Escalation Pointers
+  - Stored Creds - imp creds could be saved in a config file
+  - Windows Kernel Exploit - vulnerability exploit
+  - Exploitable file/dir perms - dir with critical files, can be accessed
+  - Insecure Service perms - access and manipulate services on the system
+  - DLL Hijacking - DLL are the sub apps required by parent app, which when manipulated, could help exploit using the priviledged application running a malicious DLL
+  - Unquoted Service Path - service exec path not enclosed in quotes `" "`, could allow to run malicious execs
+  - Always Install Elevated - installing a malicious app as administrator (deafult set as, always as admin) could grant high priviledges to unintended apps
+  - Other Softwares - other softwares, services, scripts could provide additional priviledge escalation vectors
+ - A mixture of diff vectors could result in hardship to identify and revert
+
+  ### Info Collection
+  - `net users` lists users on the system
+  - `systeminfo | findstr /B /C: "OS Name"/C: "OS Version"` returns info about the system
+  - `wmic service list` returns running/installed services on the system
+
+  ### Exploitation
+  - setup the disguise/frontline app 
+  - fix the malicious app/script exploiting the perms of the carrying app
+  - setup a listener
+  - run the service
+
+## Day 14 Networking :: DevOps & CI/CD 
+- CI/CD is a continuous process or loop that includes steps of the software development process, to enable development teams to make changes, test their code, and deploy the application more reliably
+- CI: Continuous Integration is the process in which software source code is kept in a central repository (GitHub)
+- CD: Continuous Delivery is the continuous, automatic code deployment to test, pre-production, or production environments
+
+- Aim : uncover weaknesses in the automation process
+- Risks
+  - access security : The increasing number of integration points can make access management difficult and also open a path for malicious activity
+  - permissions : Components are connected with each other and perform their tasks with user accounts, so perms should be checked
+  - keys and secrets : keys(API keys, ID keys) should be secured
+  - user security : user with source code access can be attacked to insert malicious code
+  - default config : if deafult configs like default passwords arnt changed, that could cause a blunder
+  - A locally installed Jenkins application can have an unpatched component deployed for various operational reasons
+
+## Day 15 :: Cyber Careers
+
+## Day 16 :: OSINT
+- 
