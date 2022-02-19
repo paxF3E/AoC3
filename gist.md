@@ -348,4 +348,46 @@ FYI:
 - at core, OSINT is searching and identifying info; but an understanding of the platform functionality is required
   - for ex GitHub, version control if not properly sanitized, could reveal critical info like editing/correcting accidental API key, passwords etc, could be accessed thru logs
 
-## Day 17 :: Cloud
+## Day 17 Cloud :: Shadow IT
+- compromised attention on security, due to hasty completion, results in systems not built on IT security standards
+- public could is one way to get into shadow IT; most accessible public could is AWS
+
+### Amazon Web Services (AWS)
+  - Amazon AWS is public cloud service provider, two services discussed here
+    - Amazon S3 : simple storage service && AWS IAM : identity and access management
+      - AWS infra is divided into regions, independent clusters of datacenters; each region has an availability zone (AZ), each having a separate power grid, located in flood plains
+      - S3 is the publicly hosted object storage service, objs are stored in buckets using a global namespace
+      - identifying and listing the contents of a bucket is easy for buckets with public info; after parsing the data, it can be put to use
+      - Authentication levels
+        ![image](https://user-images.githubusercontent.com/75432450/154815725-2dbc7337-6904-4ec0-99b0-314ea7470414.png)
+    - AWS IAM : all requests to AWS must be signed using IAM access keys consisting of an Access key ID(AKIA... 20 chars) and Secret Access Key(40 chars)
+      - short terms creds have username for AWS API as `ASIA%` and have an additional string Session Token
+
+## Day 18 Cloud :: Docker Containers
+  - Containers are a virtualization mechanism similar to Virtual Machines
+    - a container image is composed of a number of layers
+    - packaging an app in a container freezes the app and its dependencies into an image as a part of build process
+    - build process is part of the Software Development Lifecycle (SDLC), where applications and their dependencies are packaged together and tested prior to distribution and use
+    - running the container image will always result in the same configuration state as specified at build-time, built from a `Dockerfile` source file
+      - Dockerfiles are a list of new-line separated instructions that instruct the Docker daemon how to generate a container image
+  - Docker
+    - Docker API : local comm interface on a configured Linux machine to communicate with a Docker Daemon
+    - Docker Daemon : a process that runs on the machine, to interact with container components
+    - Docker Container Image Format : ultimately a `.tar` file
+  - AWS Elastic Container Registry (ECR) - an online registry for public and private container images
+
+## Day 19 Blue Teaming :: Phishing
+  - When emails are sent to a target(s) purporting to be from a trusted entity to lure individuals into providing sensitive information
+  - Spearphishing - targetted phishing, targetting an individual/org/industry/co
+  - Mail analysis for phishing
+    - is sender known?
+    - does mail ID matches the sender?
+    - does reply-to mail matches the sender?
+    - is greeting msg, personal or general?
+    - misspelt words and incorrect grammar
+    - sense of urgency, act `NOW`
+    - included link/button, redirecting to a website, does that website matches?
+    - attachments
+
+## Day 20 Blue Teaming :: File Analysis
+
