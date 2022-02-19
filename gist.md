@@ -314,4 +314,38 @@ FYI:
 ## Day 15 :: Cyber Careers
 
 ## Day 16 :: OSINT
-- 
+### OSINT or Open Source Intelligence, is obtaining info from free and public sources
+  - Information is the core of OSINT
+    - Sources of info:
+      1. Clearnet : anything public like facebook, twitter, github; widely used for voluminous data available
+      2. Darknet : accessed using special software and additional config, like TOR, Freenet, I2P, IPFS, Zeronet
+  - Information originates from digital footprint. We look for left behind data to proceed towards the target
+  - RIS OSINT Model :
+    - this data-info model approaches gathering info to identify and categorize data
+    - ![image](https://user-images.githubusercontent.com/75432450/154808748-2893951d-baea-4936-922d-ebceafb49f98.png)
+  - RIS OSINT Roller Coaster represents phases of OSINT investigation about client
+    - this is an ever evolving process, that improves acc to feedback(intelligence and decisions) from previous model
+    - ![image](https://user-images.githubusercontent.com/75432450/154808855-35a5e956-950f-4878-8c80-079cf77a95a1.png)
+    - insights of the stages of RIS OSINT web
+      - ![image](https://user-images.githubusercontent.com/75432450/154808902-2e7178b2-fc8b-419d-a856-749c5d1e039f.png)
+### Account Discovery and Analysis
+- Accounts are a great source of info and digital footprints
+- analysing target account 
+  - ![image](https://user-images.githubusercontent.com/75432450/154809169-4ff0ba82-852c-4605-b412-0de8d704de27.png)
+
+### Google Dorking
+- enumerating sources using `google dorks`, a syntax to granulate the searches
+- some key terms (complete list [https://gist.github.com/sundowndev/283efaddbcf896ab405488330d1bbc06])
+  - ![image](https://user-images.githubusercontent.com/75432450/154809283-cfd6fbdc-3c2f-4227-9f92-4a5dadec38a8.png)
+
+### OSINT and Blockchain
+- core principle of blockchain tech and decentralization is 'anonymity'; if a target is anonymous, then how info can be gathered?
+- since, blockchain is open yet anonymous, indentifying can be done quickly, but linking them is difficult
+- tools aiding in blockchain exploration : blocktrail, bitcoing who's who, graphsense, block explorer
+- same methodolody is applied to web3, goal is to get back to a traditional persona
+
+### OSINT and further..
+- at core, OSINT is searching and identifying info; but an understanding of the platform functionality is required
+  - for ex GitHub, version control if not properly sanitized, could reveal critical info like editing/correcting accidental API key, passwords etc, could be accessed thru logs
+
+## Day 17 :: Cloud
