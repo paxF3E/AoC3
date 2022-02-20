@@ -390,4 +390,9 @@ FYI:
     - attachments
 
 ## Day 20 Blue Teaming :: File Analysis
+  - `file` - file type regardless of extension
+  - `string` - extracts and prints the printable char sequences; can disclose IP addresses, URLs, commands like ssh, session, message, etc.
+  - further analysis using `VIRUSTOTAL`; scans the uploaded file/URL/IP for diff scan results of 60+ antiviruses; giving out details on relations with redirecting malicious websites/behaviors/community feedbacks
+
+## Day 21 Blue Teaming :: YARA 
 
