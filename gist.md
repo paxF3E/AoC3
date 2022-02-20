@@ -1,4 +1,4 @@
-# AoC-3-2021
+# ADVENT OF CYBER 3 (AoC3) BY THM 2021
 
 ## Day 1 Web Exploitation :: IDOR
 Insecure Direct Object Reference, IDOR, server returns query results without authenticating user identity. 
@@ -473,4 +473,6 @@ FYI:
     - `hash.txt` represents the text file containing the hash
     - `—pot=output.txt` represents the output file that the clear text retrieved password will be stored in
 
-_**la fin**_
+## Day 25 :: Feedback Stuff
+
+## _**la fin**_
