@@ -395,4 +395,82 @@ FYI:
   - further analysis using `VIRUSTOTAL`; scans the uploaded file/URL/IP for diff scan results of 60+ antiviruses; giving out details on relations with redirecting malicious websites/behaviors/community feedbacks
 
 ## Day 21 Blue Teaming :: YARA 
+  - YARA is a multi-platform tool for matching patterns of interest in (malicious) files used to perform research and categorize and identify malware families and identify malware with similar patterns
+  - basic syntax of YARA rule
+    ```
+        rule rulename
+            {
+              meta:
+                author = "tryhackme"
+                description = "test rule"
+                created = "11/12/2021 00:00"
+              strings:
+                $textstring = "text"
+                $hexstring = {4D 5A}
+              conditions:
+                $textstring and $hexstring
+            }
+    ```
+    - begins with `rule` to indicate the start of a rule
+    - `strings` declaration beings with a `$` as `"text"` or `{F3E}` or regex for complex pattern matching
+    - `conditions` defines the conditions before hitting a file, using `and`, `or`, `not`
+    - metadata beigns with `meta` specifying additional information
+  - run a YARA rule `yara [options] rule_file [target]`
+    - `-m` to display metadata on a _hit_
+    - `-s` to display matched strings on _hit_
+    - no echo on a _miss_
 
+## Day 22 Blue Teaming :: CyberChef
+  - _Base64 encoding schemes are used when there is a need to encode binary data that needs to be stored and transferred over media that are designed to deal with ASCII_; while attackers use this to evade antivirus
+  - _XOR Cipher_; applying bitwise XOR to each char
+
+  ### Oledump
+  - analyze OLE (Object Linking and Embedding) compound files in binary format
+  - malicious scripts can be hidden using the macros 
+  - OLE files could contain storages which are basically folders that contain streams of data or other storages
+    - `-A` does an ASCII dump similar to option `-a`, but duplicate lines are removed
+    - `-S` dumps strings
+    - `-d` produces a raw dump of the stream content
+    - `-s` STREAM NUMBER or --select=STREAM NUMBER allows you to select the stream number to analyze (-s a to select all streams)
+    - `-d`, `--dump` perform a raw dump
+    - `-x`, `--hexdump` perform a hex dump
+    - `-a`, `--asciidump` perform an ascii dump
+    - `-S`, `--strings` perform a strings dump
+    - `-v`, `--vbadecompress` VBA decompression
+    
+## Day 23 Blue Teaming :: Powershell scripting and logs
+  - **PowerShell Logging** audit commands run in the PowerShell console
+  - there are many event logs on a Windows system, categorized by the provider, each having a specific event ids to identify events or actions
+
+## Day 24 Blue Teaming :: Post Exploitation
+  ### Post Exploitation
+  - after unauthorized acces to a system, attacker aims to
+    1. escalate the priviledges
+    2. maintain persistence within the target env by setting up mechanism, if current gets blocked or removed
+    
+  ### Password Hashing
+  - to change the text of a password to a non-recognizable form, hashing applies a one-way transform and represents the original password into a converted form
+  - a hash-function returns a fixed lenght string that is unique for a input string
+    `password123 → MD5 → 7576f3a00f6de47b0c72c5baf2d505b0`
+  - knowing the algorithm (MD5/SHA1/SHA256), attacker can bypass the inputs and crack the hash to find the correct password by inputting various forms of assumed phrase
+
+  ### Authentication and Hashing
+  - creds in a Windows system are stored as hashes in Security Accounts Manager (SAM) database
+  - most common used hashes in SAM are
+    - LAN Manager (LM); oldest form of password storage for legacy systems; limited char-set, thus crackable
+    - NT LAN Manager (NTLM); used in new systems
+  - on a user login, Local Security Authority Subsystem Service (LSASS) retrieves the creds(hashed) from SAM and compares to the inputted creds 
+
+  ### Dumping Password Hashes
+  - since LSASS has to interact and save creds in the memory, it has high priviledges
+  - to obtain password hash, we use `mimikatz`'s `skeurlsa` module
+
+  ### Cracking Password Hash
+  - using `John The Ripper` to crack the hashes
+  - params and args of the `john` command
+    - `—format=NT` represents the type of the hash
+    - `PATH_TO_WORDLIST` is the wordlist containing the input passwords that will be hashed by john and compared against our hash
+    - `hash.txt` represents the text file containing the hash
+    - `—pot=output.txt` represents the output file that the clear text retrieved password will be stored in
+
+_**la fin**_
