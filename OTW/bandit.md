@@ -41,4 +41,31 @@ Command : `find / -type f -size 33c -group bandit6 -user bandit7`; `/` for searc
 Password : `HKBPTKQnIay4Fw76bEy8PVxKEDQRKTzs`
 
 ## Level 7
+Command : `grep <PHRASE> <FILE_NAME>`
 
+Password : `cvX2JJa4CFALtqS87jk27qwqGhBM9plV`
+
+## Level 8
+Command : `sort <FILE_NAME> | uniq -u` <br>
+`uniq` returns unique strings in succession, `sort` is required to place all duplicates together, then perform `uniq` to get the single unique keyphrase
+
+Password : `UsvVyFSfZZWbi6wgC7dAFyFuR6jQQUhR`
+
+## Level 9
+Command : `strings data.txt | grep "="` <br>
+`strings` prints the strings for printable characters, then searching for those strings with `=` in them
+
+Password : `truKLdjsbJ5g7yyJ2X2R0o3a5HQJFuLk`
+
+## Level 10
+Command : `base64 -d <FILE_NAME>`; `-d` flag to specify the decode option
+
+Password : `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
+
+## Level 11
+Command : bandit page shows base64 encoding, but its not. decoding the text in `data.txt` using decode.fr
+
+Password : `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
+
+## Level 12
+Command : 
