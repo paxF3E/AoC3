@@ -63,7 +63,7 @@ Command : `base64 -d <FILE_NAME>`; `-d` flag to specify the decode option
 Password : `IFukwKGsFW8MOq3IRFqrxE1hxTNEbUPR`
 
 ## Level 11
-Command : bandit page shows base64 encoding, but its not. decoding the text in `data.txt` using decode.fr
+Command : `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`; reading the content of file, and pipelining it to ROT13 decode command 
 
 Password : `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
 
