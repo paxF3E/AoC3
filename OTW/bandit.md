@@ -68,4 +68,27 @@ Command : `cat data.txt | tr 'A-Za-z' 'N-ZA-Mn-za-m'`; reading the content of fi
 Password : `5Te8Y4drgCRfCx8ugdwuEX8KFC6k2EUu`
 
 ## Level 12
+Repeatedly compressed password file; <br>
+Trick is: 
+  - copy to a location, with access to make files `cp <SOURCE_PATH> <DEST_PATH>`
+  - reverse the hexdump to a extension less file `xxd -r <FILE_NAME> > <NEW_FILE>`
+  - check for the type using `file <NEW_FILE>`; returns the file was a _gzip_ compressed data
+  - rename it to give a _.gz_ extension using `mv data data.gz`
+  - decompress it to get a new file
+  - run `file <RESULT_FILE>` to get its type, change the extension as per need, decompress it again using suitable commands untill the result file is a `ASCII` one
+
+Password : `8ZjyCRiBWFYkneahHwxCv3wb2a1ORpYL`
+
+## Level 13
+Command : `ssh bandit14@localhost -i sshkey.private`; accessing _bandit14_ over _localhost_ with _sshkey.private_ auth using `-i` flag
+
+Password : `4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e`
+
+## Level 14
+Command : `nc -l 30000`; to listen on `port 30000`; <br>
+`echo "4wcYUJFw0k0XLShlDzztnTBHiqxU3b3e" | nc localhost 30000`; sending data to _localhost_ on port number `30000` using _netcat nc_ tool
+
+Password : `BfMYroe26WYalil77FoDi9qh59eK5xNr`
+
+## Level 15
 Command : 
