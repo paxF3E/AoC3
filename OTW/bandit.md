@@ -154,4 +154,10 @@ Command : `nc -l -p 10000`; on another session - `./suconnect 10000`; on origina
 Password : `gE269g2h3mw3pwgrj0Ha9Uoqen1c9DGr`
 
 ## Level 21
+look for jobs in `/etc/cron.d` for level 22; `cronjob_bandit22.sh` in `/usr/bin/` reveals that the output is being written to some other location <br>
+run `cat /usr/bin/cronjob_bandit22.sh`; and read the output file as mentioned
+
+Password : `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
+
+## Level 22
 
