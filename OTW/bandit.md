@@ -174,9 +174,10 @@ Password : `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 ## Level 24
 password for next level will be given by the listener on recieving `LAST_PASSWORD+XXXX`; where `XXXX` is a numerical combination of digits, of which only the correct combination will echo the password <br>
 create a python script
-```for i in range(10000):
-        pin = "0"*(4-len(str(i))) + str(i)
-        print('UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ' + " " + pin)
+```
+for i in range(10000):
+  pin = "0"*(4-len(str(i))) + str(i)
+  print('UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ' + " " + pin)
 ```
 run `python3 script.py > combination.txt`; then `cat combination.txt | nc localhost 30002`; password will be returned on correct set of `LAST_PASSWORD+XXXX`
 
