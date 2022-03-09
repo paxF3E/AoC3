@@ -172,4 +172,63 @@ copy the scrip to `/var/spool/bandit24/`, and wait for the script to be executed
 Password : `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
 
 ## Level 24
+password for next level will be given by the listener on recieving `LAST_PASSWORD+XXXX`; where `XXXX` is a numerical combination of digits, of which only the correct combination will echo the password <br>
+create a python script
+```for i in range(10000):
+        pin = "0"*(4-len(str(i))) + str(i)
+        print('UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ' + " " + pin)
+```
+run `python3 script.py > combination.txt`; then `cat combination.txt | nc localhost 30002`; password will be returned on correct set of `LAST_PASSWORD+XXXX`
 
+Password : `uNG9O58gUE7snukf3bvZ0rxhtnjzSGzG`
+
+## Level 25
+there is an `ssh.private` key in the home directory; save it to system, make it private `chmod 600` and run for next level
+
+## Level 26
+Session is getting closed as soon as logged in; as hinted in prev level _The shell for user bandit26 is not /bin/bash_ <br>
+logging in as `bandit25` again, and looking for some info
+  - first check out the `passwd` file in `/etc` containing info about all the users on the Linux system
+  - the difference is given out, its `/usr/bin/showtext` instead of `/usr/bin/bash`
+  - reading the `showtext` file reveals, that a `more` keyword is being used before exiting the shell connection; which displays output screen by screen in case of big files
+  - resizing the terminal forces the `more` to not execute everything in one go
+  - in shrunken terminal, pressing `v` opens a vim editor, and using a `:set` flag allows to set `shell=/bin/bash`; hitting `:shell` gives us a shell with `bandit26` user
+  - reading the password using `./bandit27-do cat /etc/bandit_pass/bandit27`
+
+Password : `3ba3118a22e93127a4ed485be72ef5ea`
+
+## Level 27
+cloning the given repo to a new temp directory in `/tmp/mydir` and reading the README, gives the password
+
+Password : `0ef186ac70e04ea33b4c1853d2526fa2`
+
+## Level 28
+again, cloning the given repo to a temp directory and reading the README.md <br>
+but here, `password: <xxxxxxxxx>` something, to get the updated parts in the commits, use `git log -p` 
+
+Password : `bbc96594b4e001778eee9975372716b2`
+
+## Level 29
+cloning the repo and reading the README, found that `<no passwords in production!>`; meaning not accessible to the specific branch <br>
+run `git branch -r` to list all branches; use `git checkout <BRANCH>` to switch branches; switching to `dev` and then running `git log -p` gives the password
+
+Password : `5b90576bedb2cc04c86a9e924ce42faf`
+
+## Level 30
+cloning and reading the README gives nothing this time, so we check the `tags` <br>
+there is a `secret`; running `git show secret` to get the password
+
+Password : `47e603bb428404d265f59c42920d81e5`
+
+## Level 31
+cloning and reading the README tells to make a file with specified content and then push it to _master_ <br>
+`echo "May I come in?" > key.txt`; `git add key.txt -f`; `git commit -m " "`; `git push origin master`
+
+Password : `56a9bf19c63d650ce78e6ec0354ee45e`
+
+## Level 32
+modified shell, converting everything to UPPERCASE; using `$0` to rerun the shell, and look for password in `/etc/bandit_pass/bandit33`
+
+Password : `c9c3199ddf4121b10cf581a98d51caee`
+
+### _~fin_
