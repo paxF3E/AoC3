@@ -160,4 +160,16 @@ run `cat /usr/bin/cronjob_bandit22.sh`; and read the output file as mentioned
 Password : `Yk7owGAcWjwMVRwrTesJEwB7WVOiILLI`
 
 ## Level 22
+reading `/usr/bin/cronjob_bandit23.sh` reveals the instructions for the password; run the second command with `myname=bandit23`; will return a string; hit `cat /tmp/RETURNED_STRING` voila! heres the password
+
+Password : `jc1udXuA1tiHqjIsL8yaapX5XIAI6i0n`
+
+## Level 23
+need to write a script, `mkdir /tmp/secttp`; `touch secttp.sh`; now edit the script to specify the path where pass has to be stored after reading <br>
+copy the scrip to `/var/spool/bandit24/`, and wait for the script to be executed with the cron job <br>
+`password` file whose path was given in the script now has the password for next level
+
+Password : `UoMYTrfrBFHyQXmg6gzctqAwOmw1IohZ`
+
+## Level 24
 
